@@ -3,11 +3,11 @@ package ro.ase.cts.lab1.model;
 import ro.ase.cts.lab1.exception.InsufficientBalanceException;
 import ro.ase.cts.lab1.exception.NegativeAmountException;
 
-public class OwnedAccount extends Account {
+public class CurrentAccount extends Account {
 
     private final String name;
 
-    public OwnedAccount(String name) {
+    public CurrentAccount(String name) {
         super();
         this.name = name;
     }
