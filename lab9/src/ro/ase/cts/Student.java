@@ -17,6 +17,10 @@ public class Student {
     }
 
     public double computeAverageGrade() {
+        if(grades == null) {
+            return 0;
+        }
+
         var result = 0d;
         for(var grade : grades) {
             result += grade;
@@ -26,6 +30,10 @@ public class Student {
     }
 
     public void addGrade(double grade) {
+        if(grade <= 0 | grade > 10) {
+            throw new IllegalArgumentException();
+        }
+
         grades.add(grade);
     }
 
