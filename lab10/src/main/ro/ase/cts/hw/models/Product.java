@@ -19,9 +19,9 @@ public class Product {
     private static final int PRICE_LOWER_BOUNDARY = 0;
     private static final int PRICE_UPPER_BOUNDARY = 1000;
 
-    private String name;
-    private float price;
-    private ArrayList<Integer> weeklySoldItems;		//number of items sold each week
+    public String name;
+    public float price;
+    public ArrayList<Integer> weeklySoldItems;		//number of items sold each week
 
     public Product(String name, float price) {
         name = name;
@@ -31,7 +31,7 @@ public class Product {
 
     public Product(String name, float price, ArrayList<Integer> soldItems) {
         this.name = name;
-        price = price;
+        this.price = price;
         this.weeklySoldItems = new ArrayList<Integer>();
         for(Integer n: soldItems)
             this.weeklySoldItems.add(n);
@@ -67,6 +67,10 @@ public class Product {
         if(minLimit < PRICE_LOWER_BOUNDARY
             || minLimit > PRICE_UPPER_BOUNDARY) {
             throw new UnsupportedOperationException();
+        }
+
+        if(weeklySoldItems == null || weeklySoldItems.isEmpty()) {
+            return 0;
         }
 
         int noWeeks = 0;
